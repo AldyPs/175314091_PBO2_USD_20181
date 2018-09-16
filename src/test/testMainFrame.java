@@ -8,10 +8,7 @@ package test;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import test.MainFrame;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.*;
 import view.TambahPasienBaruDialog;
 import view.TambahAntrianDialog;
 
@@ -42,7 +39,7 @@ public class testMainFrame extends JFrame implements ActionListener {
         menuPasien = new JMenu("Menu");
         tambahPasien = new JMenuItem("Tambah Pasien");
         tambahAntrian = new JMenuItem("Tambah Antrian");
-        exitMenuItem = new JMenuItem("EXIT");
+        exitMenuItem = new JMenuItem("Exit");
         
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
