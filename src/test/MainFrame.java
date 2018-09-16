@@ -5,6 +5,7 @@
  */
 package test;
 
+import view.testMainFrame;
 import javax.swing.JFrame;
 
 /**
@@ -12,9 +13,14 @@ import javax.swing.JFrame;
  * @author Aldy
  */
 public class MainFrame extends JFrame {
-
+    
+    /**
+     * method ini berfungsi untuk memanggil data yang telah dibuat
+     * @param args 
+     */
     public static void main(String[] args) {
         testMainFrame test = new testMainFrame();
+        //ukuran tabel yang akan dibuat
         test.setSize(400, 400);
         test.setVisible(true);
         test.setDefaultCloseOperation(EXIT_ON_CLOSE);

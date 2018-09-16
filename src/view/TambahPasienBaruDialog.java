@@ -15,7 +15,7 @@ import model.Pasien;
  * @author jarkom
  */
 public class TambahPasienBaruDialog extends JDialog implements ActionListener {
-
+    //membuat variabel baru
     private JLabel namaLabel, jenisKelamin;
     private JLabel judulLabel, noNIK, labelAlamat,labelTanggal,labelTahun,labelBulan;
     private JTextField namaText, textNIK, textAlamat;
@@ -28,9 +28,11 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         "28", "29", "30", "31"};
     private String bulan[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9",
         "10", "11", "12"};
-    private String tahun[] = {"1990", "1991", "1992", "1993", "1994", "1995",
-        "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004",
-         "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
+    private String tahun[] = {"1970", "1971", "1972", "1973", "1974","1975",
+        "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", 
+        "1985", "1986", "1987", "1988", "19989", "1990", "1991", "1992", "1993",
+        "1994", "1995","1996", "1997", "1998", "1999", "2000", "2001", "2002", 
+        "2003", "2004","2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
          "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"};
 
     public TambahPasienBaruDialog() {
@@ -47,7 +49,7 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         //untuk judul label yaitu "Form Daftar Antrian", dan menginputkan
         //data (150 yang berarti panjang x, 30 yang berarti panjang y,
         //250 untuk panjang tulisan dan 20 untuk tebal atau tinggi tulisan)
-        judulLabel = new JLabel("Form Daftar Antrian");
+        judulLabel = new JLabel("Form Daftar Pasien");
         judulLabel.setBounds(130, 30, 250, 20);
         this.add(judulLabel);
 
@@ -93,28 +95,28 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         //menuju ke bawah, 200 panjang kotak untuk mengisi data, 30 tinggi kotak
         //untuk mengisi data
         textAlamat = new JTextField("");
-        textAlamat.setBounds(80, 140, 200, 30);
+        textAlamat.setBounds(80, 140, 200, 100);
         this.add(textAlamat);
 
         //untuk "Jenis Kelamin", dan menginputkan data (20 yang berarti panjang x,
-        //180 yang berarti panjang y, 50 untuk panjang tulisan "Kelamin",
+        //250 yang berarti panjang y, 90 untuk panjang tulisan "Jenis Kelamin",
         //dan 30 untuk tebal atau tinggi tulisan "Jenis Kelamin")
         jenisKelamin = new JLabel("Jenis Kelamin");
-        jenisKelamin.setBounds(20, 180, 50, 30);
+        jenisKelamin.setBounds(20, 250, 90, 30);
         this.add(jenisKelamin);
         
-        //untuk "Pria", dan menginputkan data (80 yang berarti panjang x,
-        //180 yang berarti panjang y, 200 untuk panjang tulisan "Pria",
+        //untuk "Pria", dan menginputkan data (120 yang berarti panjang x,
+        //250 yang berarti panjang y, 60 untuk panjang tulisan "Pria",
         //dan 30 untuk tebal atau tinggi tulisan "Pria")
         lakiLaki = new JRadioButton("Pria", true);
-        lakiLaki.setBounds(80, 180, 200, 30);
+        lakiLaki.setBounds(120, 250, 60, 30);
         this.add(lakiLaki);
         
-        //untuk "Wanita", dan menginputkan data (80 yang berarti panjang x,
-        //210 yang berarti panjang y, 200 untuk panjang tulisan "Wanita",
+        //untuk "Wanita", dan menginputkan data (190 yang berarti panjang x,
+        //250 yang berarti panjang y, 80 untuk panjang tulisan "Wanita",
         //dan 30 untuk tebal atau tinggi tulisan "Wanita")
         wanita = new JRadioButton("Wanita", false);
-        wanita.setBounds(80, 210, 200, 30);
+        wanita.setBounds(190, 250, 80, 30);
         this.add(wanita);
         
         //untuk mengelompokkan wanita dan pria mengunakan variabel kelaminButtonGroup
@@ -123,56 +125,56 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         kelaminButtonGroup.add(lakiLaki);
         
         //untuk "Simpan", dan menginputkan data (80 yang berarti panjang x,
-        //300 yang berarti panjang y, 100 untuk panjang tulisan "Simpan",
+        //330 yang berarti panjang y, 100 untuk panjang tulisan "Simpan",
         //dan 30 untuk tebal atau tinggi tulisan "Simpan")
         saveBotton = new JButton("Simpan");
-        saveBotton.setBounds(80, 300, 100, 30);
+        saveBotton.setBounds(80, 330, 100, 30);
         this.add(saveBotton);
         saveBotton.addActionListener(this);
         
         //untuk "Tanggal", dan menginputkan data (20 yang berarti panjang x,
-        //250 yang berarti panjang y, 50 untuk panjang tulisan "Tanggal",
+        //290 yang berarti panjang y, 50 untuk panjang tulisan "Tanggal",
         //dan 30 untuk tebal atau tinggi tulisan "Tanggal")
         labelTanggal = new JLabel("Tanggal");
-        labelTanggal.setBounds(20, 250, 50, 30);
+        labelTanggal.setBounds(20, 290, 50, 30);
         this.add(labelTanggal);
         
         //mengatur kotak untuk mengisi data pada "Tanggal", yaitu 70 yang berarti
-        //panjang x dari samping Label, 250 yang berarti panjang y dari atas Label
+        //panjang x dari samping Label, 290 yang berarti panjang y dari atas Label
         //menuju ke bawah, 50 panjang kotak untuk mengisi data, 30 tinggi kotak
         //untuk mengisi data
         tanggalBox = new JComboBox(tanggal);
-        tanggalBox.setBounds(70, 250, 50, 30);
+        tanggalBox.setBounds(70, 290, 50, 30);
         this.add(tanggalBox);
         
         //untuk "Bulan", dan menginputkan data (130 yang berarti panjang x,
-        //250 yang berarti panjang y, 50 untuk panjang tulisan "Bulan",
+        //290 yang berarti panjang y, 50 untuk panjang tulisan "Bulan",
         //dan 30 untuk tebal atau tinggi tulisan "Bulan")
         labelBulan = new JLabel("Bulan");
-        labelBulan.setBounds(130, 250, 50, 30);
+        labelBulan.setBounds(130, 290, 50, 30);
         this.add(labelBulan);
         
         //mengatur kotak untuk mengisi data pada "Bulan", yaitu 170 yang berarti
-        //panjang x dari samping Label, 250 yang berarti panjang y dari atas Label
+        //panjang x dari samping Label, 290 yang berarti panjang y dari atas Label
         //menuju ke bawah, 50 panjang kotak untuk mengisi data, 30 tinggi kotak
         //untuk mengisi data
         BulanBox = new JComboBox(bulan);
-        BulanBox.setBounds(170, 250, 50, 30);
+        BulanBox.setBounds(170, 290, 50, 30);
         this.add(BulanBox);
         
         //untuk "Tahun", dan menginputkan data (220 yang berarti panjang x,
-        //250 yang berarti panjang y, 50 untuk panjang tulisan "Tahun",
+        //290 yang berarti panjang y, 50 untuk panjang tulisan "Tahun",
         //dan 30 untuk tebal atau tinggi tulisan "Tahun")
         labelTahun = new JLabel("Tahun");
-        labelTahun.setBounds(220, 250, 50, 30);
+        labelTahun.setBounds(220, 290, 50, 30);
         this.add(labelTahun);
         
         //mengatur kotak untuk mengisi data pada "Tahun", yaitu 260 yang berarti
-        //panjang x dari samping Label, 250 yang berarti panjang y dari atas Label
+        //panjang x dari samping Label, 290 yang berarti panjang y dari atas Label
         //menuju ke bawah, 70 panjang kotak untuk mengisi data, 30 tinggi kotak
         //untuk mengisi data
         TahunBox = new JComboBox(tahun);
-        TahunBox.setBounds(260, 250, 70, 30);
+        TahunBox.setBounds(260, 290, 70, 30);
         this.add(TahunBox);
         
     }

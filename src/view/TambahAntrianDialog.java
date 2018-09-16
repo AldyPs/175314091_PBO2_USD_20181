@@ -15,7 +15,7 @@ import model.Pasien;
  * @author Aldy
  */
 public class TambahAntrianDialog extends JDialog implements ActionListener {
-
+    //membuat variabel baru
     private JLabel namaLabel;
     private JLabel labelNama, labelAlamat, noRM;
     private JTextField textNama, textAlamat, textRM;

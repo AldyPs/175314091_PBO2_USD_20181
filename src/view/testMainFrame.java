@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
+package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +17,7 @@ import view.TambahAntrianDialog;
  * @author Aldy
  */
 public class testMainFrame extends JFrame implements ActionListener {
-
+    //membuat variabel baru
     private JMenuBar menuBar;
     private JMenu fileMenu;
     private JMenu menuPasien;
@@ -35,7 +35,9 @@ public class testMainFrame extends JFrame implements ActionListener {
         menuBar = new JMenuBar();
         fileMenu = new JMenu("Pasien");
         
-        this.setTitle("frame");
+        this.setTitle("Antrian");
+        //menambahkan menu pada label menggunakan menuPasien, tambahPasien,
+        //tambahAntrian dan exitMenuItem yang terdapat beberapa pilihan
         menuPasien = new JMenu("Menu");
         tambahPasien = new JMenuItem("Tambah Pasien");
         tambahAntrian = new JMenuItem("Tambah Antrian");
@@ -53,18 +55,29 @@ public class testMainFrame extends JFrame implements ActionListener {
         
     }
     
+    /**
+     * method ini digunakan untuk menampilkan menu menu yang telah dibuat sebelumnya
+     * @param tambah 
+     */
     @Override
     public void actionPerformed(ActionEvent tambah) {
+        //menampilkan tabel baru jika pengguna memilih tambahPasien
+        //isi tabel tersebut berupa data yang telah di susun pada kelas
+        //TambahPasienBaruDialog
         if (tambah.getSource() == tambahPasien) {
             TambahPasienBaruDialog test = new TambahPasienBaruDialog();
-            test.setSize(400, 400);
+            test.setSize(400, 500);
             test.setVisible(true);
         }
+        //menampilkan tabel baru jika pengguna memilih tambahAntrian
+        //isi tabel tersebut berupa data yang telah di susun pada kelas
+        //TambahAntrianDialog
         if (tambah.getSource() == tambahAntrian) {
             TambahAntrianDialog test = new TambahAntrianDialog();
-            test.setSize(400, 400);
+            test.setSize(400, 500);
             test.setVisible(true);
         }
+        //jika pengguna memilih exitMenuItem maka akan keluar dari tabel
         if (tambah.getSource() == exitMenuItem) {
             System.exit(0);
         }
