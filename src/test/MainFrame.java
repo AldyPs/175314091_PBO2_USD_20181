@@ -5,7 +5,7 @@
  */
 package test;
 
-import view.testMainFrame;
+import view.Frame;
 import javax.swing.JFrame;
 
 /**
@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
      * @param args 
      */
     public static void main(String[] args) {
-        testMainFrame test = new testMainFrame();
+        Frame test = new Frame();
         //ukuran tabel yang akan dibuat
         test.setSize(400, 400);
         test.setVisible(true);

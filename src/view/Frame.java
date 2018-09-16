@@ -16,7 +16,7 @@ import view.TambahAntrianDialog;
  *
  * @author Aldy
  */
-public class testMainFrame extends JFrame implements ActionListener {
+public class Frame extends JFrame implements ActionListener {
     //membuat variabel baru
     private JMenuBar menuBar;
     private JMenu fileMenu;
@@ -25,7 +25,7 @@ public class testMainFrame extends JFrame implements ActionListener {
     private JMenuItem tambahPasien;
     private JMenuItem tambahAntrian;
     
-    public testMainFrame() {
+    public Frame() {
         init();
     }
     
