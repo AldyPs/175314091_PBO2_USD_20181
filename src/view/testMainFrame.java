@@ -33,8 +33,9 @@ public class testMainFrame extends JFrame implements ActionListener {
         this.setLayout(null);
         this.setJMenuBar(menuBar);
         menuBar = new JMenuBar();
+        //membuat menu pada label
         fileMenu = new JMenu("Pasien");
-        
+        //membuat Judul label
         this.setTitle("Antrian");
         //menambahkan menu pada label menggunakan menuPasien, tambahPasien,
         //tambahAntrian dan exitMenuItem yang terdapat beberapa pilihan
