@@ -21,6 +21,7 @@ public class AntrianPasien {
     private Pasien[] daftarPasien = new Pasien[jumlah_maksimal_pasien];
     private int nomorAntrian = 0;
     public static ArrayList<AntrianPasien> daftarAntrian = new ArrayList<AntrianPasien>();
+    private ArrayList<Pasien> daftarPasienAntri = new ArrayList<Pasien>();
 
     public AntrianPasien() {
     }
@@ -65,8 +66,8 @@ public class AntrianPasien {
         this.klinik = klinik;
     }
 
-    public Pasien[] getDaftarPasien() {
-        return daftarPasien;
+    public ArrayList<Pasien> getDaftarPasien() {
+        return daftarPasienAntri;
     }
 
     public void setDaftarPasien(Pasien[] daftarPasien) {
@@ -79,16 +80,19 @@ public class AntrianPasien {
      * @param pasien
      * @throws Exception
      */
-    public void mendaftar(Pasien pasien) throws Exception {
-
-        //nomor antrian dibandingkan dengan jumlah maksimal pasien yang dilayar
-        if (nomorAntrian < jumlah_maksimal_pasien) {
-            daftarPasien[nomorAntrian] = pasien;
-            nomorAntrian++;
-        } else {
-            //antrian sudah penuh
-            throw new Exception("antrian penuh coyy");
-        }
+//    public void mendaftar(Pasien pasien) throws Exception {
+//
+//        //nomor antrian dibandingkan dengan jumlah maksimal pasien yang dilayar
+//        if (nomorAntrian < jumlah_maksimal_pasien) {
+//            daftarPasien[nomorAntrian] = pasien;
+//            nomorAntrian++;
+//        } else {
+//            //antrian sudah penuh
+//            throw new Exception("antrian penuh coyy");
+//        }
+//    }
+    public void mendaftar(Pasien pasien) {
+        getDaftarPasien().add(pasien);
     }
 
     /**
@@ -102,40 +106,39 @@ public class AntrianPasien {
         return daftarPasien[nomorAntrian];
     }
 
-    public static AntrianPasien cariAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
+    public static int cariAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
         for (int i = 0; i < daftarAntrian.size(); i++) {
             if (daftarAntrian.get(i).tanggalAntrian == tanggal) {
                 if (daftarAntrian.get(i).bulanAntrian == bulan) {
                     if (daftarAntrian.get(i).tahunAntrian == tahun) {
                         if (daftarAntrian.get(i).getKlinik().getIdKlinik().equalsIgnoreCase(klinik.getIdKlinik())) {
                             if (daftarAntrian.get(i).getKlinik().getNama().equalsIgnoreCase(klinik.getNama())) {
-                                return daftarAntrian.get(i);
+                                return i;
                             }
                         }
                     }
                 }
             }
         }
-        return null;
+        return -1;
     }
 
-    public static void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
-        AntrianPasien antrian = new AntrianPasien();
-        antrian.setTanggalAntrian(tanggal);
-        antrian.setBulanAntrian(bulan);
-        antrian.setTahunAntrian(tahun);
-        antrian.setKlinik(klinik);
-        // cari antrian dalam list daftarAntri
-        if (cariAntrian(tanggal, bulan, tahun, klinik) == null) {
-            // tambah dalam list antrian
-            daftarAntrian.add(antrian);
-        } else {
-            System.out.println("antrian sudah ada");
-        }
-    }
-    
-    public static void daftarPasien(Pasien pasien, int tanggal, int bulan, int tahun, Klinik klinik){
-        
+//    public static void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
+//        AntrianPasien antrian = new AntrianPasien();
+//        antrian.setTanggalAntrian(tanggal);
+//        antrian.setBulanAntrian(bulan);
+//        antrian.setTahunAntrian(tahun);
+//        antrian.setKlinik(klinik);
+//        // cari antrian dalam list daftarAntri
+//        if (cariAntrian(tanggal, bulan, tahun, klinik) == null) {
+//            // tambah dalam list antrian
+//            daftarAntrian.add(antrian);
+//        } else {
+//            System.out.println("antrian sudah ada");
+//        }
+//    }
+    public static void daftarPasien(Pasien pasien, int tanggal, int bulan, int tahun, Klinik klinik) {
+
     }
 
     public String toString() {
