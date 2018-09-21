@@ -137,6 +137,24 @@ public class AntrianPasien {
 //            System.out.println("antrian sudah ada");
 //        }
 //    }
+    public static void buatAntrian(
+            int tanggal,
+            int bulan,
+            int tahun,
+            Klinik klinik) {
+        AntrianPasien antrian = new AntrianPasien();
+        antrian.setTanggalAntrian(tanggal);
+        antrian.setBulanAntrian(bulan);
+        antrian.setTahunAntrian(tahun);
+        antrian.setKlinik(klinik);
+        // cari antrian dalam list daftarAntri
+        if (cariAntrian(tanggal, bulan, tahun, klinik) <0) {
+            // tambah dalam list antrian
+            daftarAntrian.add(antrian);
+        } else {
+            System.out.println("antrian sudah ada");
+        }
+    }
     public static void daftarPasien(Pasien pasien, int tanggal, int bulan, int tahun, Klinik klinik) {
 
     }

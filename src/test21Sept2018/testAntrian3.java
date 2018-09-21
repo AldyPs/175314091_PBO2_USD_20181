@@ -46,13 +46,13 @@ public class testAntrian3 {
         pasien2.setNama("adi");
         pasien2.setAlamat("klaten");
 
-        AntrianPasien testAntrian = AntrianPasien.cariAntrian(21, 9, 2018, new Klinik("001", "anak"));
-        if (testAntrian != null) {
-            testAntrian.mendaftar(pasien1);
-            testAntrian.mendaftar(pasien2);
+        int indeksAntrian = AntrianPasien.cariAntrian(21, 9, 2018, new Klinik("001", "anak"));
+        if (indeksAntrian > 0) {
+            AntrianPasien.daftarAntrian.get(indeksAntrian).mendaftar(pasien1);
+            AntrianPasien.daftarAntrian.get(indeksAntrian).mendaftar(pasien2);
         }
-        for (int i = 0; i < testAntrian.getDaftarPasien().size(); i++) {
-            System.out.println(testAntrian.getDaftarPasien().get(i));
+        for (int i = 0; i < AntrianPasien.daftarAntrian.get(indeksAntrian).getDaftarPasien().size(); i++) {
+            System.out.println(AntrianPasien.daftarAntrian.get(indeksAntrian).getDaftarPasien().get(i));
         }
     }
 }
