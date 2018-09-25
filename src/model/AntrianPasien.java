@@ -137,11 +137,7 @@ public class AntrianPasien {
 //            System.out.println("antrian sudah ada");
 //        }
 //    }
-    public static void buatAntrian(
-            int tanggal,
-            int bulan,
-            int tahun,
-            Klinik klinik) {
+    public static void buatAntrian(int tanggal,int bulan,int tahun,Klinik klinik) {
         AntrianPasien antrian = new AntrianPasien();
         antrian.setTanggalAntrian(tanggal);
         antrian.setBulanAntrian(bulan);
