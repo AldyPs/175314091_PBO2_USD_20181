@@ -15,9 +15,10 @@ import model.Pasien;
  * @author jarkom
  */
 public class TambahPasienBaruDialog extends JDialog implements ActionListener {
+
     //membuat variabel baru
     private JLabel namaLabel, jenisKelamin;
-    private JLabel judulLabel, noNIK, labelAlamat,labelTanggal,labelTahun,labelBulan;
+    private JLabel judulLabel, noNIK, labelAlamat, labelTanggal, labelTahun, labelBulan;
     private JTextField namaText, textNIK, textAlamat;
     private JButton saveBotton;
     private JRadioButton lakiLaki, wanita;
@@ -28,12 +29,12 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         "28", "29", "30", "31"};
     private String bulan[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9",
         "10", "11", "12"};
-    private String tahun[] = {"1970", "1971", "1972", "1973", "1974","1975",
-        "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", 
+    private String tahun[] = {"1970", "1971", "1972", "1973", "1974", "1975",
+        "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984",
         "1985", "1986", "1987", "1988", "19989", "1990", "1991", "1992", "1993",
-        "1994", "1995","1996", "1997", "1998", "1999", "2000", "2001", "2002", 
-        "2003", "2004","2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
-         "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"};
+        "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
+        "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
+        "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"};
 
     public TambahPasienBaruDialog() {
         init();
@@ -104,26 +105,26 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         jenisKelamin = new JLabel("Jenis Kelamin");
         jenisKelamin.setBounds(20, 250, 90, 30);
         this.add(jenisKelamin);
-        
+
         //untuk "Pria", dan menginputkan data (120 yang berarti panjang x,
         //250 yang berarti panjang y, 60 untuk panjang tulisan "Pria",
         //dan 30 untuk tebal atau tinggi tulisan "Pria")
         lakiLaki = new JRadioButton("Pria", true);
         lakiLaki.setBounds(120, 250, 60, 30);
         this.add(lakiLaki);
-        
+
         //untuk "Wanita", dan menginputkan data (190 yang berarti panjang x,
         //250 yang berarti panjang y, 80 untuk panjang tulisan "Wanita",
         //dan 30 untuk tebal atau tinggi tulisan "Wanita")
         wanita = new JRadioButton("Wanita", false);
         wanita.setBounds(190, 250, 80, 30);
         this.add(wanita);
-        
+
         //untuk mengelompokkan wanita dan pria mengunakan variabel kelaminButtonGroup
         ButtonGroup kelaminButtonGroup = new ButtonGroup();
         kelaminButtonGroup.add(wanita);
         kelaminButtonGroup.add(lakiLaki);
-        
+
         //untuk "Simpan", dan menginputkan data (80 yang berarti panjang x,
         //330 yang berarti panjang y, 100 untuk panjang tulisan "Simpan",
         //dan 30 untuk tebal atau tinggi tulisan "Simpan")
@@ -131,14 +132,14 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         saveBotton.setBounds(80, 330, 100, 30);
         this.add(saveBotton);
         saveBotton.addActionListener(this);
-        
+
         //untuk "Tanggal", dan menginputkan data (20 yang berarti panjang x,
         //290 yang berarti panjang y, 50 untuk panjang tulisan "Tanggal",
         //dan 30 untuk tebal atau tinggi tulisan "Tanggal")
         labelTanggal = new JLabel("Tanggal");
         labelTanggal.setBounds(20, 290, 50, 30);
         this.add(labelTanggal);
-        
+
         //mengatur kotak untuk mengisi data pada "Tanggal", yaitu 70 yang berarti
         //panjang x dari samping Label, 290 yang berarti panjang y dari atas Label
         //menuju ke bawah, 50 panjang kotak untuk mengisi data, 30 tinggi kotak
@@ -146,14 +147,14 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         tanggalBox = new JComboBox(tanggal);
         tanggalBox.setBounds(70, 290, 50, 30);
         this.add(tanggalBox);
-        
+
         //untuk "Bulan", dan menginputkan data (130 yang berarti panjang x,
         //290 yang berarti panjang y, 50 untuk panjang tulisan "Bulan",
         //dan 30 untuk tebal atau tinggi tulisan "Bulan")
         labelBulan = new JLabel("Bulan");
         labelBulan.setBounds(130, 290, 50, 30);
         this.add(labelBulan);
-        
+
         //mengatur kotak untuk mengisi data pada "Bulan", yaitu 170 yang berarti
         //panjang x dari samping Label, 290 yang berarti panjang y dari atas Label
         //menuju ke bawah, 50 panjang kotak untuk mengisi data, 30 tinggi kotak
@@ -161,14 +162,14 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         BulanBox = new JComboBox(bulan);
         BulanBox.setBounds(170, 290, 50, 30);
         this.add(BulanBox);
-        
+
         //untuk "Tahun", dan menginputkan data (220 yang berarti panjang x,
         //290 yang berarti panjang y, 50 untuk panjang tulisan "Tahun",
         //dan 30 untuk tebal atau tinggi tulisan "Tahun")
         labelTahun = new JLabel("Tahun");
         labelTahun.setBounds(220, 290, 50, 30);
         this.add(labelTahun);
-        
+
         //mengatur kotak untuk mengisi data pada "Tahun", yaitu 260 yang berarti
         //panjang x dari samping Label, 290 yang berarti panjang y dari atas Label
         //menuju ke bawah, 70 panjang kotak untuk mengisi data, 30 tinggi kotak
@@ -176,12 +177,14 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         TahunBox = new JComboBox(tahun);
         TahunBox.setBounds(260, 290, 70, 30);
         this.add(TahunBox);
-        
+
     }
+
     /**
      * digunakan untuk menginputkan data yang nantinya akan pengguna masukkan
      * pada label sehingga data tersebut dapat tersimpan dengan baik
-     * @param a 
+     *
+     * @param a
      */
     @Override
     public void actionPerformed(ActionEvent a) {
@@ -191,6 +194,9 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
             pasien.setNama(namaText.getText());
             pasien.setAlamat(textAlamat.getText());
             Pasien.tambahPasienBaru(pasien);
+            pasien.setTanggalLahir(Integer.valueOf(tanggalBox.getSelectedItem().toString()));
+            pasien.setBulanLahir(Integer.valueOf(BulanBox.getSelectedItem().toString()));
+            pasien.setTahunLahir(Integer.valueOf(TahunBox.getSelectedItem().toString()));
             JOptionPane.showMessageDialog(null, "Telah Ditambahkan");
             this.dispose();
         }

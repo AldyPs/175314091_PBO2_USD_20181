@@ -6,6 +6,7 @@
 package model;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,7 +22,7 @@ public class AntrianPasien {
     private Pasien[] daftarPasien = new Pasien[jumlah_maksimal_pasien];
     private int nomorAntrian = 0;
     public static ArrayList<AntrianPasien> daftarAntrian = new ArrayList<AntrianPasien>();
-    private ArrayList<Pasien> daftarPasienAntri = new ArrayList<Pasien>();
+    private static ArrayList<Pasien> daftarPasienAntri = new ArrayList<Pasien>();
 
     public AntrianPasien() {
     }
@@ -92,7 +93,7 @@ public class AntrianPasien {
 //        }
 //    }
     public void mendaftar(Pasien pasien) {
-        getDaftarPasien().add(pasien);
+        daftarPasienAntri.add(pasien);
     }
 
     /**
@@ -105,7 +106,15 @@ public class AntrianPasien {
     public Pasien panggilPasien(int nomorAntrian) {
         return daftarPasien[nomorAntrian];
     }
-
+    
+    /**method ini berfungsi untuk mencari antrian pasien yang sudah terdaftar
+     * 
+     * @param tanggal
+     * @param bulan
+     * @param tahun
+     * @param klinik
+     * @return 
+     */
     public static int cariAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
         for (int i = 0; i < daftarAntrian.size(); i++) {
             if (daftarAntrian.get(i).tanggalAntrian == tanggal) {
@@ -123,20 +132,13 @@ public class AntrianPasien {
         return -1;
     }
 
-//    public static void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
-//        AntrianPasien antrian = new AntrianPasien();
-//        antrian.setTanggalAntrian(tanggal);
-//        antrian.setBulanAntrian(bulan);
-//        antrian.setTahunAntrian(tahun);
-//        antrian.setKlinik(klinik);
-//        // cari antrian dalam list daftarAntri
-//        if (cariAntrian(tanggal, bulan, tahun, klinik) == null) {
-//            // tambah dalam list antrian
-//            daftarAntrian.add(antrian);
-//        } else {
-//            System.out.println("antrian sudah ada");
-//        }
-//    }
+    /**method ini berfungsi untuk membuat antrian pasien dari data daftarPasien
+     * 
+     * @param tanggal
+     * @param bulan
+     * @param tahun
+     * @param klinik 
+     */
     public static void buatAntrian(int tanggal,int bulan,int tahun,Klinik klinik) {
         AntrianPasien antrian = new AntrianPasien();
         antrian.setTanggalAntrian(tanggal);
@@ -144,15 +146,28 @@ public class AntrianPasien {
         antrian.setTahunAntrian(tahun);
         antrian.setKlinik(klinik);
         // cari antrian dalam list daftarAntri
-        if (cariAntrian(tanggal, bulan, tahun, klinik) <0) {
+        if (cariAntrian(tanggal, bulan, tahun, klinik) == -1) {
             // tambah dalam list antrian
             daftarAntrian.add(antrian);
         } else {
-            System.out.println("antrian sudah ada");
+            JOptionPane.showMessageDialog(null, "Antrian telah terdaftar");
         }
     }
+    /**method ini berfungsi untuk mendaftarkan pasien sehingga dapat masuk ke antrian
+     * 
+     * @param pasien
+     * @param tanggal
+     * @param bulan
+     * @param tahun
+     * @param klinik 
+     */
     public static void daftarPasien(Pasien pasien, int tanggal, int bulan, int tahun, Klinik klinik) {
-
+        if (cariAntrian(tanggal, bulan, tahun, klinik) >= 0) {
+            daftarAntrian.get(cariAntrian(tanggal, bulan, tahun, klinik)).mendaftar(pasien);
+        }else{
+            buatAntrian(tanggal, bulan, tahun, klinik);
+            daftarAntrian.get(cariAntrian(tanggal, bulan, tahun, klinik)).mendaftar(pasien);
+        }
     }
 
     public String toString() {

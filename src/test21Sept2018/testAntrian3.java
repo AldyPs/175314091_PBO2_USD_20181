@@ -35,7 +35,7 @@ public class testAntrian3 {
         pasien2.setAlamat("klaten");
 
         int indeksAntrian = AntrianPasien.cariAntrian(21, 9, 2018, new Klinik("001", "anak"));
-        if (indeksAntrian > 0) {
+        if (indeksAntrian >= 0) {
             AntrianPasien.daftarAntrian.get(indeksAntrian).mendaftar(pasien1);
             AntrianPasien.daftarAntrian.get(indeksAntrian).mendaftar(pasien2);
         }

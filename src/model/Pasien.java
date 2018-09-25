@@ -106,16 +106,8 @@ public class Pasien {
      * @param tanggalLahir
      * @throws Exception
      */
-    public void setTanggalLahir(int tanggalLahir) throws Exception {
-        if (tanggalLahir > 0) {
-            if (tanggalLahir <= 31) {
+    public void setTanggalLahir(int tanggalLahir) {
                 this.tanggalLahir = tanggalLahir;
-            } else {
-                throw new Exception("Tanggal Lahir Salah");
-            }
-        } else {
-            throw new Exception("Tanggal Lahir Salah");
-        }
     }
 
     public int getBulanLahir() {
@@ -131,16 +123,10 @@ public class Pasien {
      * @param bulanLahir
      * @throws Exception
      */
-    public void setBulanLahir(int bulanLahir) throws Exception {
-        if (bulanLahir > 0) {
-            if (bulanLahir <= 12) {
+    public void setBulanLahir(int bulanLahir){
+        
                 this.bulanLahir = bulanLahir;
-            } else {
-                throw new Exception("Bulan Lahir Salah");
-            }
-        } else {
-            throw new Exception("Bulan Lahir Salah");
-        }
+            
     }
 
     public int getTahunLahir() {
@@ -155,12 +141,10 @@ public class Pasien {
      * @param tahunLahir
      * @throws Exception
      */
-    public void setTahunLahir(int tahunLahir) throws Exception {
-        if (tahunLahir > 0) {
+    public void setTahunLahir(int tahunLahir) {
+        
             this.tahunLahir = tahunLahir;
-        } else {
-            throw new Exception("Tahun Lahir Salah");
-        }
+        
     }
 
     /**
