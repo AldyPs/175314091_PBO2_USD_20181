@@ -24,7 +24,6 @@ public class Klinik {
         this.nama = nama;
     }
     
-
     public String getIdKlinik() {
         return idKlinik;
     }
